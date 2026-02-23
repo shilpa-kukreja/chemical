@@ -17,12 +17,12 @@ export default function GallerySection() {
     fetchCategories();
   }, []);
 
-  
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemical-backend-6oix.onrender.com";
 
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/categories/admin/all"
+        "https://chemical-backend-6oix.onrender.com/api/categories/admin/all"
       );
 
       console.log("Categories:", response.data);
@@ -81,7 +81,7 @@ export default function GallerySection() {
                 <div className="relative overflow-hidden  border border-gray-400 rounded-md bg-white shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer">
 
                   <img
-                    src={`http://localhost:5000${category.image}`}
+                    src={`${API_BASE_URL}${category.image}`}
                     alt={category.name}
                     className="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />

@@ -8,7 +8,7 @@ import axios from "axios";
 
 export default function ProductsPage() {
   const [categories, setCategories] = useState([]);
-   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
+   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemical-backend-6oix.onrender.com";
 
   useEffect(() => {
     fetchCategories();

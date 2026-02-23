@@ -14,11 +14,12 @@ const HomeSlider = () => {
   useEffect(() => {
     fetchBanners();
   }, []);
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemical-backend-6oix.onrender.com";
 
 const fetchBanners = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:5000/api/mainbanner/all"
+      `${API_BASE_URL}/api/mainbanner/all`
     );
 
     console.log("Banners:", res.data);
@@ -56,7 +57,7 @@ const fetchBanners = async () => {
         {banners.map((banner, index) => (
           <div key={banner._id} className="relative w-full">
             <img
-              src={`http://localhost:5000${banner.image}`}
+              src={`${API_BASE_URL}${banner.image}`}
               alt="Main Banner"
               loading="lazy"
               // priority={index === 0}

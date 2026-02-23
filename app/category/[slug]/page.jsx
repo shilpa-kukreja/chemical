@@ -239,7 +239,7 @@ export default function CategoryProductsPage() {
   const [sortBy, setSortBy] = useState("name");
 
   // API Base URL
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemical-backend-6oix.onrender.com";
 
   // Fetch data on mount and when slug changes
   useEffect(() => {
