@@ -728,7 +728,7 @@ export default function Navbar() {
       <header className={`w-full z-50 transition-all duration-300 ${navStyle}`}>
         {/* ================= TOP BAR ================= */}
         <div
-          className={`text-sm ${isHome && !scrolled ? "text-white" : "bg-gray-900 text-white"
+          className={`text-sm ${isHome && !scrolled ? "text-gray-600" : "bg-gray-900 text-white"
             }`}
         >
           {/* <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">

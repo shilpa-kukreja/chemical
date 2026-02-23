@@ -262,7 +262,7 @@ export default function ProductDetailPage() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
 
-    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemical-backend-6oix.onrender.com";
 
     // Fetch product by slug
     useEffect(() => {

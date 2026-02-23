@@ -219,7 +219,7 @@ export default function ProductsShowcase() {
                 className="relative bg-gray-100 flex items-center justify-center pt-4 h-64"
               >
                 <img
-                  src={`http://localhost:5000${product.image}`}
+                  src={`${API_BASE_URL}${product.image}`}
                   alt={product.name}
                   className="object-contain h-full w-full transition-transform duration-300 hover:scale-105"
                 />
