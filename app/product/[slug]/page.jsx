@@ -376,66 +376,63 @@ export default function ProductDetailPage() {
 
                     {/* LEFT: SWIPER GALLERY */}
                     <div>
-                        {galleryImages.length > 0 ? (
-                            <>
-                                {/* Main Slider */}
-                                <Swiper
-                                    spaceBetween={10}
-                                    navigation
-                                    thumbs={{ swiper: thumbsSwiper }}
-                                    modules={[Navigation, Thumbs]}
-                                    className="rounded-xl bg-gray-100 mb-4"
-                                >
-                                    {allImages.map((img, index) => (
-                                        <SwiperSlide key={index}>
-                                            <div className="h-[420px] flex items-center justify-center">
-                                                <img
-                                                    src={`${API_BASE_URL}${img}`}
-                                                    alt={product.name}
+  {allImages.length > 0 ? (
+    <>
+      {/* MAIN SLIDER */}
+      <Swiper
+        spaceBetween={10}
+        navigation
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[Navigation, Thumbs]}
+        className="rounded-xl bg-gray-100 mb-4"
+      >
+        {allImages.map((img, index) => (
+          <SwiperSlide key={index}>
+            <div className="h-[420px] flex items-center justify-center">
+              <img
+                src={`${API_BASE_URL}${img}`}
+                alt={product.name}
+                className="object-contain h-full w-full"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-                                                    className="object-contain h-full w-full overflow-hidden "
-                                                />
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-
-                                {/* Thumbnails - Only show if more than 1 image */}
-                                {galleryImages.length > 1 && (
-                                    <Swiper
-                                        onSwiper={setThumbsSwiper}
-                                        spaceBetween={12}
-                                        slidesPerView={4}
-                                        watchSlidesProgress
-                                        modules={[Thumbs]}
-                                        className="mt-3"
-                                    >
-                                        {allImages.map((img, index) => (
-                                            <SwiperSlide key={index}>
-                                                <div className="border border-gray-400 rounded-lg p-2 bg-gray-100 cursor-pointer hover:border-red-500 transition">
-                                                    <img
-                                                        src={`${API_BASE_URL}${img}`}
-                                                        alt={`${product.name} thumbnail ${index + 1}`}
-                                                        className="object-contain w-full h-20"
-                                                    />
-                                                </div>
-                                            </SwiperSlide>
-                                        ))}
-                                    </Swiper>
-                                )}
-                            </>
-                        ) : (
-                            // Fallback if no gallery images
-                            <div className="h-[420px] flex items-center justify-center bg-gray-100 rounded-xl">
-                                <img
-                                    src={`${API_BASE_URL}${thumbImage}`}
-                                    alt={product.name}
-
-                                    className="object-contain h-full w-full overflow-hidden "
-                                />
-                            </div>
-                        )}
-                    </div>
+      {/* THUMBNAILS */}
+      {allImages.length > 1 && (
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          spaceBetween={12}
+          slidesPerView={4}
+          watchSlidesProgress
+          modules={[Thumbs]}
+          className="mt-3"
+        >
+          {allImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <div className="border border-gray-400 rounded-lg p-2 bg-gray-100 cursor-pointer hover:border-red-500">
+                <img
+                  src={`${API_BASE_URL}${img}`}
+                  alt="thumb"
+                  className="object-contain w-full h-20"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
+    </>
+  ) : (
+    <div className="h-[420px] flex items-center justify-center bg-gray-100 rounded-xl">
+      <img
+        src="/placeholder-image.jpg"
+        alt="no image"
+        className="object-contain h-full w-full"
+      />
+    </div>
+  )}
+</div>
 
                     {/* RIGHT: PRODUCT INFO */}
                     <div>

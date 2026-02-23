@@ -930,7 +930,7 @@ export default function Navbar() {
                     className="flex items-center gap-3 p-2 rounded-lg hover:bg-red-50 transition"
                   >
                     <img
-                      src={`http://localhost:5000${cat.image || "/placeholder.jpg"}`}
+                      src={`${API_BASE_URL}${cat.image || "/placeholder.jpg"}`}
                       className="w-10 h-10 object-cover rounded"
                       alt={cat.name}
                     />
