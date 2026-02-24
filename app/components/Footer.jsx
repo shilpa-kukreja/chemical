@@ -339,9 +339,9 @@ export default function Footer() {
             }`}
           >
             <ul className="space-y-4 text-sm text-gray-400">
-              <li className="flex gap-3">
+              {/* <li className="flex gap-3">
                 <Mail size={16} /> ajantadfpens@gmail.com
-              </li>
+              </li> */}
               <li className="flex gap-3">
                 <Phone size={16} /> +91 8046047240
               </li>
