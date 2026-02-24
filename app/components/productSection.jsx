@@ -36,7 +36,7 @@
 //   //   try {
 //   //     const res = await axios.get("http://localhost:5000/api/products?limit=8");
 //   //     console.log("Products API response:", res.data);
-      
+
 //   //     // Handle different response structures
 //   //     if (Array.isArray(res.data)) {
 //   //       setProducts(res.data);
@@ -52,7 +52,7 @@
 //   //   }
 //   // };
 
-    
+
 
 //   useEffect(() => {
 //     fetchCategories();
@@ -104,13 +104,13 @@
 //                 {/* <span className="absolute top-3 left-3 bg-cyan-500 text-white text-xs font-semibold px-3 py-1 rounded-md">
 //                   New
 //                 </span> */}
-                
+
 //                 <img
 //                   src={`http://localhost:5000${product.image}`}
 //                   alt={product.name}
 //                   className="object-contain h-full w-full  transition-transform duration-300  overflow-hidden"
 //                 />
-                
+
 //               </Link>
 
 //               {/* Product Name */}
@@ -134,12 +134,12 @@
 //             </div>
 //           ))}
 
-         
+
 //         </div>
 
 
-       
-            
+
+
 //         {/* Modal */}
 //         <EnquiryModal
 //           isOpen={!!selectedProduct}
@@ -150,7 +150,7 @@
 //       <Link href="/agricultural-herbicides-insecticide" className="text-gray-500 flex items-center justify-center px-6 py-2 text-center bg-[#1b3163] hover:text-gray-700 font-semibold">
 //               View All Categories
 //             </Link>
-          
+
 //     </section>
 //   );
 // }
@@ -166,7 +166,7 @@ import Link from "next/link";
 export default function ProductsShowcase() {
   const [categories, setCategories] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemical-backend-6oix.onrender.com";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemical-backend-6oix.onrender.com";
 
   useEffect(() => {
     fetchCategories();
@@ -238,7 +238,12 @@ export default function ProductsShowcase() {
                   Get Quote
                 </button>
 
-                <button className="flex-1 hidden sm:block bg-black hover:bg-gray-800 text-white text-sm font-medium py-2 rounded-md transition">
+                <button
+                  onClick={() =>
+                    window.open("https://wa.me/8046047240", "_blank")
+                  }
+                  className="flex-1 hidden sm:block bg-black hover:bg-gray-800 text-white text-sm font-medium py-2 rounded-md transition"
+                >
                   Chat Now
                 </button>
               </div>
