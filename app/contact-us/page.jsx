@@ -248,8 +248,7 @@ export default function ContactPage() {
           </h2>
 
           <p className="text-white mb-12 text-justify max-w-md leading-relaxed">
-            We're here to answer your questions, discuss your requirements,
-            and help you find the right writing solutions for your business.
+            Connect with us for bulk orders, export inquiries, or product details. Our team is ready to assist you with reliable agrochemical solutions tailored to your agricultural needs.
           </p>
 
           <div className="space-y-6">

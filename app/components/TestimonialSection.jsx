@@ -11,23 +11,37 @@ export default function TestimonialSection() {
   const testimonials = [
     {
       id: 1,
-      name: "Vivek Mehta",
+      name: "Rajesh Kumar, Agricultural Distributor, Uttar Pradesh",
       review:
-        "I’m really impressed with the innovative designs and affordable prices of Vinayak Writing Instruments. Their products are stylish, comfortable to use, and perform exceptionally well.",
+        "We have been sourcing herbicides and insecticides from Chemical & Allied Products for years. Product performance is consistent, and farmer feedback has always been positive.",
       rating: 5,
     },
     {
       id: 2,
-      name: "Priya Desai",
+      name: "Imran Ahmed, Export Partner, Bangladesh",
       review:
-        "Vinayak Writing Instruments has become my go-to for all my writing needs. The products are always of high quality, and I truly appreciate the reliability and smooth ink flow.",
+        "Their formulations meet international quality expectations. Timely dispatch and reliable documentation make them a dependable export partner.",
       rating: 5,
     },
     {
       id: 3,
-      name: "Manish Soni",
+      name: "Suresh Patel, Progressive Farmer, Gujarat",
       review:
-        "I’ve been using Vinayak Writing Instruments for a year now, and their products have proven to be exceptionally durable. Even with daily use, the quality remains consistent.",
+        "The pest control efficiency is impressive. Crop health improved noticeably after using their recommended products.",
+      rating: 5,
+    },
+     {
+      id: 4,
+      name: " Anil Verma, Agro Retailer, Bihar",
+      review:
+        "Packaging quality and product stability are excellent. We rarely face complaints, which builds strong trust with our customers.",
+      rating: 5,
+    },
+     {
+      id: 5,
+      name: "Daniel Okoro, Agro Distributor, Uganda",
+      review:
+        "Their herbicide range performs effectively under tough field conditions. We appreciate their consistent quality standards",
       rating: 5,
     },
   ];

@@ -21,7 +21,7 @@ export default function GlobalManufacturerSection() {
           <div className="relative  rounded-full sm:pt-30 pt-5 flex items-center justify-center z-10 ">
             <img
               src="/image/2.jpeg"
-              alt="DF Ball Pen"
+              alt="Global Manufacturing"
               className="object-contain h-full w-full"             
             />
           </div>
@@ -36,29 +36,19 @@ export default function GlobalManufacturerSection() {
         {/* Right CONTENT */}
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#1b3163] leading-tight mb-4">
-            Leading Ball Pen Manufacturers Offering Worldwide Delivery
+            Globally Trusted Agrochemical Manufacturer Delivering Performance Without Compromise
           </h2>
 
           <p className="text-white sm:text-lg text-md text-justify leading-relaxed mb-6">
-            As a company that focuses chiefly on exports, we are proud to provide{" "}
-            <strong>Ball Pens</strong> to customers all over the world, including
-            businesses, distributors, schools, and organisations across multiple
-            countries. All products are manufactured using high-quality plastic
-            components and undergo strict quality control checks that meet
-            international standards.
+            As a company driven by export excellence and manufacturing precision, we supply advanced herbicides, insecticides, and crop protection formulations to partners across India, Asia, and Africa. Our focus is not just production, but delivering dependable agricultural solutions that meet international quality expectations.
           </p>
 
           <p className="text-white sm:text-lg text-md text-justify leading-relaxed mb-4">
-            We ensure timely global delivery and flexible fulfillment of large
-            orders through efficient production processes, ethical business
-            practices, and reliable logistics. Vinayak Writing Instruments delivers
-            writing solutions that offer superior quality and value by combining
-            expertise, transparency, and a customer-first approach.
+            Every formulation is developed using carefully selected raw materials and processed under strict quality control systems. From active ingredient balance to packaging integrity, each stage reflects our commitment to safety, stability, and consistent field performance across diverse agricultural environments.
           </p>
 
           <p className="text-white sm:text-lg text-md text-justify leading-relaxed">
-            Vinayak is the company you can trust when you need a reliable Ball Pen
-            manufacturer and global supplier.
+            We ensure timely dispatch, structured bulk supply capabilities, and seamless export coordination supported by ethical business practices and reliable logistics. For distributors, retailers, and global partners seeking a dependable agrochemical supplier, we offer not just products, but long-term performance assurance.
           </p>
         </div>
 

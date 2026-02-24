@@ -10,31 +10,24 @@ const AboutUsSection = () => {
         {/* LEFT CONTENT */}
         <div>
           <h2 className="text-3xl md:text-5xl font-bold text-[#1b3163] leading-tight mb-6">
-            Trusted Ball Pen Supplier <br />
-            <span className="text-[#1b3163">with Worldwide Delivery</span>
+            Established 1974  <br /> 
+            <span className="text-[#1b3163">| Precision Agrochemicals | Global Supply Network</span>
           </h2>
 
           <p className="text-white sm:text-lg text-md text-justify  leading-relaxed mb-6">
-            <strong>Vinayak Writing Instruments</strong>, based in Keshod, Gujarat, is a
-            trusted global manufacturer, supplier, and wholesaler of ballpoint pens.
-            We deliver high-quality writing solutions across India and worldwide.
+            <strong>Chemical & Allied Products</strong>, established in 1974, is a trusted manufacturer and exporter of advanced agrochemical solutions. With decades of industry expertise, we deliver high-performance crop protection products across India and selected international markets in Asia and Africa.
           </p>
 
           <p className="text-white sm:text-lg text-md text-justify leading-relaxed mb-6">
-            With years of hands-on industry experience, we specialize in reliable,
-            innovative, and affordable writing tools designed for everyday use.
-            Quality, comfort, and performance are at the core of everything we make.
+           With strong manufacturing capabilities and formulation precision, we specialize in reliable pesticides, effective herbicides, and performance-driven soil enrichment solutions designed to enhance agricultural productivity. Quality control, consistency, and field-tested efficiency remain at the core of our operations.
           </p>
 
           <p className="text-white sm:text-lg text-md text-justify leading-relaxed">
-            Our wide product range includes{" "}
+            Our product portfolio includes {" "}
             <strong>
-              Crystal Ball Pens, Powerpen Ball Pens, Triangle Ball Pens, Tik Tik Pens,
-              Designer Ball Pens, DF Ball Pens (Regular, Spiral & B Series),
-              Colour Ball Point Pens, Disposable Pens, Office Pens, Use & Throw Pens,
-              and Polo Pens
+              selective insecticides, broad-spectrum herbicides, and bio-based soil enhancers available in liquid, powder, and granulated forms. Manufactured under strict standards and offered in customized packaging, our solutions are engineered to deliver dependable results across diverse farming conditions.
             </strong>
-            — all designed for smooth ink flow, comfortable grip, and long-lasting use.
+            {/* — all designed for smooth ink flow, comfortable grip, and long-lasting use. */}
           </p>
         </div>
 

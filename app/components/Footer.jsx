@@ -275,7 +275,7 @@ export default function Footer() {
             Chemicals & Allied Products
           </h3>
           <p className="text-sm text-gray-400 mb-6">
-            Gujarat-based manufacturing company delivering high-quality chemical solutions.
+            Delivering precision-formulated agrochemical solutions since 1974, serving domestic and international agricultural markets with quality, consistency, and trust.
           </p>
 
           <div className="flex gap-4">

@@ -198,11 +198,10 @@ export default function ProductsShowcase() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="sm:text-4xl text-3xl font-bold text-[#1b3163] mb-3">
-            Agricultural Herbicides & Insecticide
+            Advanced Crop Protection Solutions
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our premium agricultural solutions designed for effective
-            crop protection and higher yield.
+            Engineered formulations delivering superior pest control and enhanced crop productivity.
           </p>
         </div>
 

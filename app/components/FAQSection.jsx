@@ -9,37 +9,37 @@ const faqs = [
     id: 1,
     question: "What products does your company primarily manufacture?",
     answer:
-      "We specialize in high-quality writing instruments such as pens, designed for durability, precision, and smooth writing experiences.",
+      "We manufacture a wide range of agricultural herbicides, insecticides, and soil enrichment formulations designed to protect crops, control weeds and pests, and enhance overall agricultural productivity.",
   },
   {
     id: 2,
-    question: "Where is Vinayak Writing Instruments company located?",
+    question: "Do you supply products internationally?",
     answer:
-      "Vinayak Writing Instruments is headquartered in India, supported by advanced manufacturing facilities and a strong nationwide distribution network.",
+      "Yes, along with serving the domestic Indian market, we export our agrochemical products to selected countries across Asia and Africa, ensuring compliance with international trade and quality standards.",
   },
   {
     id: 3,
-    question: "How do you ensure product quality assurance?",
+    question: "How do you ensure product quality and consistency?",
     answer:
-      "Our products undergo stringent quality control checks at every stage, from sourcing raw materials to final inspection and packaging.",
+      "Every formulation undergoes strict quality control checks, including raw material inspection, batch testing, and stability validation to ensure safe, effective, and consistent field performance.",
   },
   {
     id: 4,
-    question: "What kind of packaging do you use?",
+    question: "What types of packaging do you offer?",
     answer:
-      "We use durable, eco-friendly, and customizable packaging solutions suitable for retail display as well as bulk supply requirements.",
+      "We provide customized packaging solutions in liquid, powder, and granulated formats, tailored to distributor requirements and export regulations.",
   },
   {
     id: 5,
-    question: "Who manages company operations?",
+    question: "What is your manufacturing experience?",
     answer:
-      "Our operations are led by seasoned professionals with decades of experience in manufacturing, compliance, and quality management.",
+      "Established in 1974, we bring over five decades of industry expertise in agrochemical manufacturing, supported by structured production systems and professional management.",
   },
   {
     id: 6,
-    question: "Which industries do your products serve?",
+    question: " Which industries or sectors do your products serve?",
     answer:
-      "Our products serve corporate gifting, education, promotional branding, and global retail markets.",
+      "Our products primarily serve the agricultural sector, including farmers, agro distributors, retailers, and international import partners seeking reliable crop protection solutions.",
   },
   
 ];
@@ -67,8 +67,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-white text-base md:text-lg">
-            Clear answers to common questions about our products,
-            manufacturing standards, and services.
+            Clear answers to common questions about our agrochemical products, manufacturing standards, and export services.
           </p>
         </div>
 
