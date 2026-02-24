@@ -51,7 +51,7 @@ export default function ProductsPage() {
               {/* Image */}
               <div className="relative  w-full overflow-hidden">
                 <img
-                  src={`http://localhost:5000${cat.image}`}
+                  src={`${API_BASE_URL}${cat.image}`}
                   alt={cat.name}
                   
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
