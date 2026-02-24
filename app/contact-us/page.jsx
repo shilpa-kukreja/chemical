@@ -257,11 +257,11 @@ export default function ContactPage() {
               title="Contact Person"
               value="Mr. Sanjeev Arora "
             />
-            <InfoBox
+            {/* <InfoBox
               icon={<Mail size={20} />}
               title="Email Address"
               value="ajantadfpens@gmail.com"
-            />
+            /> */}
             <InfoBox
               icon={<Phone size={20} />}
               title="Phone Number"
