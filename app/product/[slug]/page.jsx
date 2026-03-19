@@ -440,19 +440,19 @@ export default function ProductDetailPage() {
                             {product.name}
                         </h1>
 
-                        {product.shortDescription && (
+                        {/* {product.shortDescription && (
                             <div
                                 className="text-gray-600 mb-5"
                                 dangerouslySetInnerHTML={{
                                     __html: product.shortDescription
                                 }}
                             />
-                        )}
+                        )} */}
 
                         <div className="border-t border-gray-400 border-b py-4 mb-6 space-y-2">
                             <p className="text-lg font-semibold">
                                 Price:{" "}
-                                <span className="text-red-600">₹{product.price}</span>
+                                <span className="text-red-600">{product.price}</span>
                             </p>
                             {product.minimumOrderQuantity && (
                                 <p className="text-gray-700">
@@ -567,12 +567,12 @@ function ProductCard({ product, onEnquiryClick, API_BASE_URL }) {
                     {product.name}
                 </h3>
 
-                <p className="text-xs text-gray-500 mb-3 line-clamp-2">
+                {/* <p className="text-xs text-gray-500 mb-3 line-clamp-2">
                     {shortDescription}
-                </p>
+                </p> */}
 
                 <p className="text-sm font-semibold text-red-600 mb-4">
-                    ₹{product.price}
+                    {product.price}
                 </p>
 
                 <div className="flex gap-3">

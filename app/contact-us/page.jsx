@@ -156,7 +156,7 @@ export default function ContactPage() {
   });
   const [loading, setLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemical-backend-6oix.onrender.com";
 
   const handleChange = (e) => {
     setFormData({

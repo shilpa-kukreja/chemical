@@ -553,7 +553,7 @@ export const createProduct = async (req, res) => {
 // ✅ Get All Products (Public) - unchanged
 export const getAllProducts = async (req, res) => {
   try {
-    const { page = 1, limit = 10, search, category } = req.query;
+    const { page = 1, limit = 100, search, category } = req.query;
     const query = { isActive: true };
 
     if (search) {

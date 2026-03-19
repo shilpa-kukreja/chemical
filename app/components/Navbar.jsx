@@ -755,7 +755,7 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
             {/* LOGO */}
             <Link href="/" className="flex items-center gap-2">
-              <img src="/image/logo2.png" className="h-12" />
+              <img src="/image/cheimicallogo.jpg" className="h-12" />
               <div>
                 {/* <h1 className="font-bold text-lg leading-4">
                   Chemicals
