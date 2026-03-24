@@ -24,6 +24,8 @@ export default function AboutUs() {
     { id: 13, src: "/companygallery/Research&DevelopmentFacilities.webp", alt: "R&D", category: "R&D" },
     { id: 14, src: "/companygallery/Recognition.webp", alt: "Recognition", category: "Achievements" },
     { id: 15, src: "/companygallery/ISOCertification.webp", alt: "ISO Certification", category: "Certificates" },
+     { id: 15, src: "/companygallery/Certification.webp", alt: "Certification", category: "Certificates" },
+
   ];
 
   // Dynamic categories
