@@ -731,23 +731,7 @@ export default function Navbar() {
           className={`text-sm ${isHome && !scrolled ? "text-gray-600" : "bg-gray-900 text-white"
             }`}
         >
-          {/* <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
-            <div className="flex gap-6">
-              <a href="mailto:info@chemicalwriting.com" className="flex gap-2">
-                <Mail size={14} /> info@chemicalwriting.com
-              </a>
-              <a href="tel:+918046047240" className="flex gap-2">
-                <Phone size={14} /> +91 08046047240
-              </a>
-            </div>
-
-            <button
-              onClick={() => setIsEnquiryOpen(true)}
-              className="hidden sm:flex items-center gap-2 bg-[#1e8a25] px-4 py-1.5 rounded font-semibold hover:bg-green-700"
-            >
-              <Quote size={14} /> Get Quote
-            </button>
-          </div> */}
+         
         </div>
 
         {/* ================= MAIN NAV ================= */}
@@ -755,14 +739,9 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
             {/* LOGO */}
             <Link href="/" className="flex items-center gap-2">
-              <img src="/image/cheimicallogo.jpg" className="h-12" />
+              <img src="/image/logo(2).png" className=" sm:h-20 h-14" />
               <div>
-                {/* <h1 className="font-bold text-lg leading-4">
-                  Chemicals
-                  <span className="block text-xs text-gray-500">
-                    & Allied Products
-                  </span>
-                </h1> */}
+               
               </div>
             </Link>
 
@@ -966,8 +945,7 @@ export default function Navbar() {
 
       {/* ENQUIRY MODAL */}
       <EnquirySideModal
-        // isOpen={isEnquiryOpen}
-        // onClose={() => setIsEnquiryOpen(false)}
+        
         products={products}
       />
     </>

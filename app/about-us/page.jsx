@@ -15,16 +15,16 @@ export default function AboutUs() {
     { id: 4, src: "/companygallery/TradeMemberships.webp", alt: "Trade Memberships", category: "Memberships" },
     { id: 5, src: "/companygallery/QualityMantra.webp", alt: "Quality Mantra", category: "Quality" },
     { id: 6, src: "/companygallery/QualityAssurance.webp", alt: "Quality Assurance", category: "Quality" },
-    { id: 7, src: "/companygallery/InfrastructuraSet-Up.webp", alt: "Infrastructure Set-Up", category: "Infrastructure" },
+    { id: 7, src: "/companygallery/InfrastructuraSet-Up.jpeg", alt: "Infrastructure Set-Up", category: "Infrastructure" },
     { id: 8, src: "/companygallery/OurInfrastructure.webp", alt: "Our Infrastructure", category: "Infrastructure" },
     { id: 9, src: "/companygallery/Memberships.webp", alt: "Memberships", category: "Memberships" },
     { id: 10, src: "/companygallery/Affiliations.webp", alt: "Affiliations", category: "Memberships" },
-    { id: 11, src: "/companygallery/OurWarehouse.webp", alt: "Our Warehouse", category: "Infrastructure" },
+    { id: 11, src: "/companygallery/OurWarehouse.jpeg", alt: "Our Warehouse", category: "Infrastructure" },
     { id: 12, src: "/companygallery/CertificateofRegistration.webp", alt: "Certificate", category: "Certificates" },
     { id: 13, src: "/companygallery/Research&DevelopmentFacilities.webp", alt: "R&D", category: "R&D" },
     { id: 14, src: "/companygallery/Recognition.webp", alt: "Recognition", category: "Achievements" },
     { id: 15, src: "/companygallery/ISOCertification.webp", alt: "ISO Certification", category: "Certificates" },
-     { id: 15, src: "/companygallery/Certification.webp", alt: "Certification", category: "Certificates" },
+    { id: 15, src: "/companygallery/Certification.webp", alt: "Certification", category: "Certificates" },
 
   ];
 
@@ -57,26 +57,25 @@ export default function AboutUs() {
               <span className="relative z-10">Company Overview</span>
               <span className="absolute bottom-0 left-0 w-20 h-1 bg-yellow-400"></span>
             </h2>
-            
+
             <p className="text-gray-700 text-justify leading-relaxed mb-6 text-lg">
-              <span className="font-bold text-[#1b3163] text-2xl">Chemical & Allied Products</span> was established in the year 1974. 
-              We are a leading Manufacturer and Exporter of Agricultural Pesticides, Butachlor 50% EW Herbicide, 
-              Granulated Bio Extract Organic Soil Enricher, and much more.
-            </p>
-            
-            <p className="text-gray-700 text-justify leading-relaxed mb-6">
-              An insecticide is a pesticide used against insects. They include ovicides and larvicides used 
-              against the eggs and larvae of insects respectively. These are used in agriculture, industry and 
-              the household. The use of insecticides is believed to be one of the major factors behind the 
-              increase in agricultural productivity.
-            </p>
-            
-            <p className="text-gray-700 text-justify leading-relaxed mb-8">
-              These products are toxic and highly effective for killing various types of insects, termites and 
-              others. Available in liquified form as well as in powder form, we offer our customers these 
-              insecticides in customized packaging at nominal prices.
+              <span className="font-bold text-[#1b3163] text-2xl">Chemical & Allied Products</span> was established in the year 1974. With the motto of "Generating Prosperity" the company has strived to do so.
+              We are a 52 year young company dealing in international quality products ethically produced and sourced. We have been serving farmers by supplying quality cost effective crop protection chemicals.
             </p>
 
+            <p className="text-gray-700 text-justify leading-relaxed mb-6">
+              We have the state of the art facilities for testing, formulation and packaging for tons of material per day for every formulation.
+              And the products are released in the market after stringent quality control checks to ensure that the best product reaches to the farmers.
+              In a short span of time the company has achieved great success in establishing the agro chemical business in India.
+            </p>
+
+            <p className="text-gray-700 text-justify leading-relaxed mb-8">
+              Our products are readily accepted and popular amongst farmer community.
+              The continuous process of innovation, up gradation and development of products has helped in establishing the company and achieve new heights.
+            </p>
+
+
+           
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="text-center p-4 bg-gray-50 rounded-lg">
@@ -101,12 +100,35 @@ export default function AboutUs() {
                 src="/Aboutus.jpg"
                 alt="CEO Sanjeev Arora"
                 className="object-cover object-top h-full w-full"
-                
+
               />
             </div>
           </div>
         </div>
       </div>
+
+       {/* ================= VISION & MISSION ================= */}
+            <div className="grid md:grid-cols-2 gap-6 mb-10 max-w-7xl mx-auto px-6">
+
+              {/* Vision */}
+              <div className="bg-gradient-to-br from-[#1b3163] to-[#2a4585] text-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                <div className="text-3xl mb-3">🌍</div>
+                <h3 className="text-xl font-bold mb-3">Our Vision</h3>
+                <p className="text-sm leading-relaxed text-gray-200">
+                  To provide quality and best agri solutions to farmers, as a renowned company with size and profitability, to ascertain international presence, working towards betterment of environment and developing by research and innovation.
+                </p>
+              </div>
+
+              {/* Mission */}
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#1b3163] hover:shadow-xl transition">
+                <div className="text-3xl mb-3">🚀</div>
+                <h3 className="text-xl font-bold text-[#1b3163] mb-3">Our Mission</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                 We strive to be a knowledge and value enhancing contributor across the value chain to all the stakeholders in agriculture. We aim to serve farmers worldwide by building Global partnerships, to supply quality, cost effective crop protection chemicals. We commit ourselves to transparent, ethical business practices and innovative solutions.
+                </p>
+              </div>
+
+            </div>
 
       {/* ================= FACT SHEET SECTION WITH ICONS ================= */}
       <div className="bg-gray-50 py-16">
@@ -115,25 +137,25 @@ export default function AboutUs() {
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Quick overview of our business profile and credentials</p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <FactCard 
+            <FactCard
               icon="🏢"
               title="Nature of Business"
               value="Manufacturer"
               subtext="Factory / Warehouse / Office"
             />
-            <FactCard 
+            <FactCard
               icon="👨‍💼"
               title="Company CEO"
               value="Sanjeev Arora"
               subtext="Leading since 1974"
             />
-            <FactCard 
+            <FactCard
               icon="📍"
               title="Registered Address"
               value="Deoria-274001"
               subtext="Uttar Pradesh, India"
             />
-            <FactCard 
+            <FactCard
               icon="📊"
               title="Annual Turnover"
               value="₹1.5 - 5 Cr"
@@ -149,22 +171,22 @@ export default function AboutUs() {
           <h2 className="text-4xl font-bold text-center text-[#1b3163] mb-12">Statutory Profile</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ProfileCard 
+            <ProfileCard
               label="Import Export Code (IEC)"
               value="AADFC8544L"
               icon="📄"
             />
-            <ProfileCard 
+            <ProfileCard
               label="TAN No."
               value="ALDC0*****"
               icon="🔢"
             />
-            <ProfileCard 
+            <ProfileCard
               label="Banker"
               value="ICICI Bank"
               icon="🏦"
             />
-            <ProfileCard 
+            <ProfileCard
               label="GST No."
               value="09AADFC8544L1Z1"
               icon="📋"
@@ -185,11 +207,10 @@ export default function AboutUs() {
               <button
                 key={index}
                 onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full border transition text-sm font-medium ${
-                  activeCategory === category
+                className={`px-4 py-2 rounded-full border transition text-sm font-medium ${activeCategory === category
                     ? "bg-[#1b3163] text-white border-[#1b3163]"
                     : "bg-white border-gray-300 text-gray-700 hover:bg-[#1b3163] hover:text-white hover:border-[#1b3163]"
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -199,8 +220,8 @@ export default function AboutUs() {
           {/* Image Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filteredImages.map((image) => (
-              <div 
-                key={image.id} 
+              <div
+                key={image.id}
                 className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 onClick={() => setSelectedImage(image)}
               >
@@ -302,8 +323,8 @@ export default function AboutUs() {
 
       {/* ================= LIGHTBOX MODAL ================= */}
       {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4" 
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative max-w-4xl w-full h-[80vh]" onClick={(e) => e.stopPropagation()}>
@@ -315,7 +336,7 @@ export default function AboutUs() {
               sizes="(max-width: 1280px) 100vw, 1280px"
               priority
             />
-            <button 
+            <button
               className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center text-2xl hover:bg-opacity-70 transition"
               onClick={() => setSelectedImage(null)}
               aria-label="Close"

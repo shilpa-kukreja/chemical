@@ -339,11 +339,11 @@ export default function Footer() {
             }`}
           >
             <ul className="space-y-4 text-sm text-gray-400">
-              {/* <li className="flex gap-3">
-                <Mail size={16} /> ajantadfpens@gmail.com
-              </li> */}
               <li className="flex gap-3">
-                <Phone size={16} /> +91 8046047240
+                <Mail size={16} /> marketing@chemicalsallied.in
+              </li>
+              <li className="flex gap-3">
+                <Phone size={16} /> +91 7706862269
               </li>
               <li className="flex gap-3">
                 <MapPin size={16} />  Gorakhpur Road, Industrial Area, Deoria - 274001, Uttar Pradesh, India
@@ -368,7 +368,7 @@ export default function Footer() {
 
         {/* CALL BUTTON */}
         <a
-          href="tel:+91 8046047240"
+          href="tel:+91  7706862269"
            aria-label="Call Us"
            className="group relative flex h-14 w-14 items-center justify-center rounded-full 
      bg-[#1b3163] shadow-[0_12px_30px_rgba(27,49,99,0.35)]
@@ -384,7 +384,7 @@ export default function Footer() {
 
          {/* WHATSAPP BUTTON */}
          <a
-           href="https://wa.me/8046047240?text=Hello%20Insight%20Integrators,%20I%20would%20like%20to%20discuss%20compliance%20advisory."
+           href="https://wa.me/7706862269?text=Hello%20Insight%20Integrators,%20I%20would%20like%20to%20discuss%20compliance%20advisory."
            aria-label="WhatsApp"
            className="group relative flex h-14 w-14 items-center justify-center rounded-full 
      bg-[#25d366] shadow-[0_12px_30px_rgba(37,211,102,0.35)]

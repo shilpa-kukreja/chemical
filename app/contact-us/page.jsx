@@ -257,15 +257,15 @@ export default function ContactPage() {
               title="Contact Person"
               value="Mr. Sanjeev Arora "
             />
-            {/* <InfoBox
+            <InfoBox
               icon={<Mail size={20} />}
               title="Email Address"
-              value="ajantadfpens@gmail.com"
-            /> */}
+              value="marketing@chemicalsallied.in, capalon74@gmail.com"
+            />
             <InfoBox
               icon={<Phone size={20} />}
               title="Phone Number"
-              value="+91 08046047240"
+              value="+91 7706862269,+91 9918100952"
             />
             <InfoBox
               icon={<MapPin size={20} className="w-20 " />}

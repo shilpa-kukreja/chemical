@@ -51,23 +51,44 @@ const fetchBanners = async () => {
     cssEase: "ease-in-out",
   };
 
-  return (
-    <section className="w-full overflow-hidden">
+ return (
+  <section className="w-full overflow-hidden">
+
+    {/* ================= DESKTOP SLIDER (Dynamic) ================= */}
+    <div className="hidden md:block">
       <Slider {...settings}>
         {banners.map((banner, index) => (
           <div key={banner._id} className="relative w-full">
             <img
               src={`${API_BASE_URL}${banner.image}`}
               alt="Main Banner"
-              loading="lazy"
-              // priority={index === 0}
-              className="w-full h-auto object-cover  transition-transform duration-500 "
+              className="w-full h-auto object-cover"
             />
           </div>
         ))}
       </Slider>
-    </section>
-  );
+    </div>
+
+    {/* ================= MOBILE SLIDER (Static) ================= */}
+    <div className="block md:hidden">
+      <Slider {...settings}>
+        {[
+          "/bannermobile.jpeg",
+          "/bannermobile1.jpeg"
+        ].map((img, index) => (
+          <div key={index} className="relative w-full">
+            <img
+              src={img}
+              alt={`Mobile Banner ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
+
+  </section>
+);
 };
 
 export default HomeSlider;
