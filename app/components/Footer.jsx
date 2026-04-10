@@ -217,7 +217,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Mail,
   Phone,
@@ -228,14 +228,40 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
-import { categories } from "@/public/assets";
+import axios from "axios";
+
 
 export default function Footer() {
   const [openSection, setOpenSection] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState([]);
+
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemical-backend-6oix.onrender.com";
 
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
   };
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [catRes] = await Promise.all([
+          axios.get(`${API_BASE_URL}/api/categories/admin/all`),
+        ]);
+        const sortedCategories = (catRes.data.data || []).reverse().slice(0, 6);
+        setCategories(sortedCategories);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+  console.log("categories", categories);
+
 
   const quickLinks = [
     { name: "Home", href: "/" },
@@ -290,9 +316,8 @@ export default function Footer() {
           <SectionHeader title="Quick Links" id="quick" />
 
           <div
-            className={`overflow-hidden transition-all duration-500 ${
-              openSection === "quick" ? "max-h-96 mt-5" : "max-h-0 lg:max-h-full lg:mt-5"
-            }`}
+            className={`overflow-hidden transition-all duration-500 ${openSection === "quick" ? "max-h-96 mt-5" : "max-h-0 lg:max-h-full lg:mt-5"
+              }`}
           >
             <ul className="space-y-3 text-sm">
               {quickLinks.map((item) => (
@@ -311,9 +336,8 @@ export default function Footer() {
           <SectionHeader title="Our Products" id="products" />
 
           <div
-            className={`overflow-hidden transition-all duration-500 ${
-              openSection === "products" ? "max-h-96 mt-5" : "max-h-0 lg:max-h-full lg:mt-5"
-            }`}
+            className={`overflow-hidden transition-all duration-500 ${openSection === "products" ? "max-h-96 mt-5" : "max-h-0 lg:max-h-full lg:mt-5"
+              }`}
           >
             <div className="space-y-3 text-sm">
               {categories.map((cat) => (
@@ -334,9 +358,8 @@ export default function Footer() {
           <SectionHeader title="Contact Us" id="contact" />
 
           <div
-            className={`overflow-hidden transition-all duration-500 ${
-              openSection === "contact" ? "max-h-96 mt-5" : "max-h-0 lg:max-h-full lg:mt-5"
-            }`}
+            className={`overflow-hidden transition-all duration-500 ${openSection === "contact" ? "max-h-96 mt-5" : "max-h-0 lg:max-h-full lg:mt-5"
+              }`}
           >
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex gap-3">
@@ -351,54 +374,54 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-          
-                
+
+
       </div>
-       {/* ================= COPYRIGHT ================= */}
-       <div className="border-t border-white/10 bg-black">
+      {/* ================= COPYRIGHT ================= */}
+      <div className="border-t border-white/10 bg-black">
         <div className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-gray-500">
-         © 2026 Chemicals & Allied Products. All Rights Reserved.
-         <span className="block mt-1 text-red-500">
-             Website Designed by Recreators design and media pvt. ltd.
+          © 2026 Chemicals & Allied Products. All Rights Reserved.
+          <span className="block mt-1 text-red-500">
+            Website Designed by Recreators design and media pvt. ltd.
           </span>
         </div>
-       </div>
+      </div>
 
       <div className="fixed bottom-6 right-6 z-[100] flex flex-col gap-4">
 
         {/* CALL BUTTON */}
         <a
           href="tel:+91  7706862269"
-           aria-label="Call Us"
-           className="group relative flex h-14 w-14 items-center justify-center rounded-full 
+          aria-label="Call Us"
+          className="group relative flex h-14 w-14 items-center justify-center rounded-full 
      bg-[#1b3163] shadow-[0_12px_30px_rgba(27,49,99,0.35)]
      transition-all duration-300 hover:scale-110"
-         >
-           <span className="absolute inset-0 rounded-full animate-ping bg-[#1b3163]/30"></span>
-           <img
+        >
+          <span className="absolute inset-0 rounded-full animate-ping bg-[#1b3163]/30"></span>
+          <img
             src="https://img.icons8.com/ios-filled/50/ffffff/phone.png"
-             alt="call"
-             className="relative w-5 h-5"
-           />
-         </a>
-
-         {/* WHATSAPP BUTTON */}
-         <a
-           href="https://wa.me/7706862269?text=Hello%20Insight%20Integrators,%20I%20would%20like%20to%20discuss%20compliance%20advisory."
-           aria-label="WhatsApp"
-           className="group relative flex h-14 w-14 items-center justify-center rounded-full 
-     bg-[#25d366] shadow-[0_12px_30px_rgba(37,211,102,0.35)]
-     transition-all duration-300 hover:scale-110"
-         >
-           <span className="absolute inset-0 rounded-full animate-ping bg-[#25d366]/30"></span>
-           <img
-             src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png"
-           alt="whatsapp"
-          className="relative w-5 h-5"
-           />
+            alt="call"
+            className="relative w-5 h-5"
+          />
         </a>
 
-       </div>
+        {/* WHATSAPP BUTTON */}
+        <a
+          href="https://wa.me/7706862269?text=Hello%20Insight%20Integrators,%20I%20would%20like%20to%20discuss%20compliance%20advisory."
+          aria-label="WhatsApp"
+          className="group relative flex h-14 w-14 items-center justify-center rounded-full 
+     bg-[#25d366] shadow-[0_12px_30px_rgba(37,211,102,0.35)]
+     transition-all duration-300 hover:scale-110"
+        >
+          <span className="absolute inset-0 rounded-full animate-ping bg-[#25d366]/30"></span>
+          <img
+            src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png"
+            alt="whatsapp"
+            className="relative w-5 h-5"
+          />
+        </a>
+
+      </div>
     </footer>
   );
 }
