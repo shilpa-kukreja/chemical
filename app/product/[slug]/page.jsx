@@ -483,7 +483,7 @@ export default function ProductDetailPage() {
                             </button>
 
                             <a
-                                href={`https://wa.me/8046047240?text=I am interested in ${product.name} - ${product.price}`}
+                                href={`https://wa.me/7706862269?text=I am interested in ${product.name} - ${product.price}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition"

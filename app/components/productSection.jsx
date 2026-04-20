@@ -240,7 +240,7 @@ export default function ProductsShowcase() {
 
                 <button
                   onClick={() =>
-                    window.open("https://wa.me/8046047240", "_blank")
+                    window.open("https://wa.me/7706862269", "_blank")
                   }
                   className="flex-1 hidden sm:block bg-black hover:bg-gray-800 text-white text-sm font-medium py-2 rounded-md transition"
                 >
