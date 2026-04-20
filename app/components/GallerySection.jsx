@@ -17,12 +17,12 @@ export default function GallerySection() {
     fetchCategories();
   }, []);
 
-    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemical-backend-6oix.onrender.com";
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemicalsallied.in";
 
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
-        "https://chemical-backend-6oix.onrender.com/api/categories/admin/all"
+        `${API_BASE_URL}/api/categories/admin/all`
       );
 
       console.log("Categories:", response.data);

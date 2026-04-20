@@ -236,7 +236,7 @@ export default function Footer() {
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
 
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemical-backend-6oix.onrender.com";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemicalsallied.in";
 
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);

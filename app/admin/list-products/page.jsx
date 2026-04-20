@@ -31,7 +31,7 @@ export default function ProductsAdminPage() {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/products/admin/all");
+      const response = await axios.get("https://chemicalsallied.in/api/products/admin/all");
       setProducts(response.data.data);
     } catch (error) {
       toast.error("Failed to fetch products");
@@ -43,7 +43,7 @@ export default function ProductsAdminPage() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${selectedProduct._id}`);
+      await axios.delete(`https://chemicalsallied.in/api/products/${selectedProduct._id}`);
       toast.success("Product deleted successfully");
       fetchProducts();
       setShowDeleteModal(false);
@@ -55,7 +55,7 @@ export default function ProductsAdminPage() {
 
   const handleToggleStatus = async (productId, currentStatus) => {
     try {
-      await axios.patch(`http://localhost:5000/api/products/${productId}/toggle-status`);
+      await axios.patch(`https://chemicalsallied.in/api/products/${productId}/toggle-status`);
       toast.success(`Product ${currentStatus ? 'deactivated' : 'activated'} successfully`);
       fetchProducts();
     } catch (error) {
@@ -172,7 +172,7 @@ export default function ProductsAdminPage() {
                     <tr key={product._id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <img
-                          src={`http://localhost:5000${product.thumbImg || "/placeholder.jpg"}`}
+                          src={`https://chemicalsallied.in${product.thumbImg || "/placeholder.jpg"}`}
                           alt={product.name}
                           className="h-16 w-16 rounded-lg object-cover border"
                         />

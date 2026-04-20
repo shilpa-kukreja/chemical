@@ -658,7 +658,7 @@ export default function Navbar() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemical-backend-6oix.onrender.com";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemicalsallied.in";
 
   const dropdownRef = useRef(null);
 

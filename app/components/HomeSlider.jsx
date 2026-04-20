@@ -14,7 +14,7 @@ const HomeSlider = () => {
   useEffect(() => {
     fetchBanners();
   }, []);
-    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemical-backend-6oix.onrender.com";
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://chemicalsallied.in";
 
 const fetchBanners = async () => {
   try {
