@@ -45,18 +45,18 @@ export default function AdminSidebar() {
       icon: FiImage, 
       group: "marketing" 
     },
-    { 
-      href: "/admin/add-blogs", 
-      label: "Write Blog", 
-      icon: FiFileText, 
-      group: "blog" 
-    },
-    { 
-      href: "/admin/list-blog", 
-      label: "Blogs", 
-      icon: FiBookOpen, 
-      group: "blog" 
-    },
+    // { 
+    //   href: "/admin/add-blogs", 
+    //   label: "Write Blog", 
+    //   icon: FiFileText, 
+    //   group: "blog" 
+    // },
+    // { 
+    //   href: "/admin/list-blog", 
+    //   label: "Blogs", 
+    //   icon: FiBookOpen, 
+    //   group: "blog" 
+    // },
      { 
       href: "/admin/admin-enquries", 
       label: "Enquiries", 
