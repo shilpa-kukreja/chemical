@@ -268,8 +268,8 @@ export default function Footer() {
     { name: "About Us", href: "/about-us" },
     { name: "Our Products", href: "/agricultural-herbicides-insecticide" },
     { name: "Contact Us", href: "/contact-us" },
-    { name: "Blogs", href: "/blogs" },
-    { name: "Market Area", href: "/market-area" },
+    // { name: "Blogs", href: "/blogs" },
+    // { name: "Market Area", href: "/market-area" },
   ];
 
   const SectionHeader = ({ title, id }) => (
