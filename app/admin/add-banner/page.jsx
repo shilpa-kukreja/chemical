@@ -4,7 +4,7 @@ import axios from 'axios';
 import AdminLayout from '../components/layout';
 
 
-const API_URL =  'http://localhost:5000/api/mainbanner';
+const API_URL =  'https://chemicalsallied.in/api/mainbanner';
 
 const MainBannerList = () => {
   const [banners, setBanners] = useState([]);

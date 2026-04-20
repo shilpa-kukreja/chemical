@@ -64,7 +64,7 @@ export default function AdminContactEnquiries() {
       });
 
       const response = await axios.get(
-        `http://localhost:5000/api/contact?${params}`
+        `https://chemicalsallied.in/api/contact?${params}`
       );
 
       setEnquiries(response.data.data);
@@ -81,7 +81,7 @@ export default function AdminContactEnquiries() {
   const fetchStats = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/contact/stats`
+        `https://chemicalsallied.in/api/contact/stats`
       );
       setStats(response.data.data);
     } catch (error) {
@@ -92,7 +92,7 @@ export default function AdminContactEnquiries() {
   const handleStatusChange = async (id, newStatus) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/contact/${id}`,
+        `https://chemicalsallied.in/api/contact/${id}`,
         { status: newStatus }
       );
       
@@ -109,7 +109,7 @@ export default function AdminContactEnquiries() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/contact/${id}`
+        `https://chemicalsallied.in/api/contact/${id}`
       );
       
       // Refresh data
@@ -126,7 +126,7 @@ export default function AdminContactEnquiries() {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/contact/bulk-delete`,
+        `https://chemicalsallied.in/api/contact/bulk-delete`,
         { ids: selectedIds }
       );
       
@@ -146,7 +146,7 @@ export default function AdminContactEnquiries() {
   const handleExport = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/contact?limit=1000`
+        `https://chemicalsallied.in/api/contact?limit=1000`
       );
 
       // Convert to CSV

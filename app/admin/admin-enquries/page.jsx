@@ -63,7 +63,7 @@ export default function AdminEnquiries() {
       });
 
       const response = await axios.get(
-        `http://localhost:5000/api/enquiries?${params}`
+        `https://chemicalsallied.in/api/enquiries?${params}`
       );
 
       setEnquiries(response.data.data);
@@ -80,7 +80,7 @@ export default function AdminEnquiries() {
   const fetchStats = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/enquiries/stats`
+        `https://chemicalsallied.in/api/enquiries/stats`
       );
       setStats(response.data.data);
     } catch (error) {
@@ -91,7 +91,7 @@ export default function AdminEnquiries() {
   const handleStatusChange = async (id, newStatus) => {
     try {
       await axios.put(
-        `http:localhost:5000/api/enquiries/${id}`,
+        `https://chemicalsallied.in/api/enquiries/${id}`,
         { status: newStatus }
       );
       
@@ -108,7 +108,7 @@ export default function AdminEnquiries() {
 
     try {
       await axios.delete(
-        `http:localhost:5000/api/enquiries/${id}`
+        `https://chemicalsallied.in/api/enquiries/${id}`
       );
       
       // Refresh data
@@ -145,7 +145,7 @@ export default function AdminEnquiries() {
   const handleExport = async () => {
     try {
       const response = await axios.get(
-        `http:localhost:5000/api/enquiries?limit=1000`
+        `https://chemicalsallied.in/api/enquiries?limit=1000`
       );
 
       // Convert to CSV
@@ -213,7 +213,7 @@ export default function AdminEnquiries() {
   const saveEdit = async () => {
     try {
       await axios.put(
-        `http:localhost:5000/api/enquiries/${selectedEnquiry._id}`,
+        `https://chemicalsallied.in/api/enquiries/${selectedEnquiry._id}`,
         {
           status: selectedEnquiry.status,
           notes: selectedEnquiry.notes

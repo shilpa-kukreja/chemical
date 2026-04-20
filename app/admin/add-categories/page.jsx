@@ -38,7 +38,7 @@ export default function CategoriesAdminPage() {
   const fetchCategories = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/categories/admin/all");
+      const response = await axios.get("https://chemicalsallied.in/api/categories/admin/all");
       setCategories(response.data.data);
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to fetch categories");
@@ -114,13 +114,13 @@ export default function CategoriesAdminPage() {
 
       if (selectedCategory) {
         // Update category
-        await axios.put(`http://localhost:5000/api/categories/${selectedCategory._id}`, formDataToSend, {
+        await axios.put(`https://chemicalsallied.in/api/categories/${selectedCategory._id}`, formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" }
         });
         toast.success("Category updated successfully");
       } else {
         // Create category
-        await axios.post("http://localhost:5000/api/categories", formDataToSend, {
+        await axios.post("https://chemicalsallied.in/api/categories", formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" }
         });
         toast.success("Category created successfully");
@@ -146,14 +146,14 @@ export default function CategoriesAdminPage() {
       order: category.order || 0,
       image: null
     });
-    setImagePreview(`http://localhost:5000${category.image}` || category.image);
+    setImagePreview(`https://chemicalsallied.in${category.image}` || category.image);
     setShowModal(true);
   };
 
   // Handle delete
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/categories/${selectedCategory._id}`);
+      await axios.delete(`https://chemicalsallied.in/api/categories/${selectedCategory._id}`);
       toast.success("Category deleted successfully");
       fetchCategories();
       setShowDeleteModal(false);
@@ -260,7 +260,7 @@ export default function CategoriesAdminPage() {
                   <tr key={category._id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <img
-                        src={`http://localhost:5000${category.image}` || category.image || "/placeholder.jpg"}
+                        src={`https://chemicalsallied.in${category.image}` || category.image || "/placeholder.jpg"}
                         alt={category.name}
                         className="h-12 w-12 rounded object-cover"
                       />

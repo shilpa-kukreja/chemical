@@ -1341,7 +1341,7 @@ useEffect(() => {
     const fetchCategories = async () => {
         try {
             setCategoriesLoading(true);
-            const response = await axios.get("http://localhost:5000/api/categories/admin/all");
+            const response = await axios.get("https://chemicalsallied.in/api/categories/admin/all");
             setCategories(response.data.data);
         } catch (error) {
             toast.error("Failed to fetch categories");
@@ -1637,7 +1637,7 @@ useEffect(() => {
                 formDataToSend.append("galleryImg", file);
             });
 
-            const response = await axios.post("http://localhost:5000/api/products", formDataToSend, {
+            const response = await axios.post("https://chemicalsallied.in/api/products", formDataToSend, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 
