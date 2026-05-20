@@ -158,7 +158,9 @@ export default function RootLayout({ children }) {
 
 return (
   <html lang="en">
-    <head>
+    <body
+      className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
+    >
       {/* Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-4T223Y341W"
@@ -170,21 +172,16 @@ return (
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
           gtag('config', 'G-4T223Y341W');
         `}
       </Script>
 
       {/* CKEditor */}
-      <script
+      <Script
         src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"
-        async
-      ></script>
-    </head>
+        strategy="afterInteractive"
+      />
 
-    <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
-    >
       {/* 🎬 Background Video */}
       <video
         autoPlay
