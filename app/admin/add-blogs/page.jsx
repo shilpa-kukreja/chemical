@@ -534,3 +534,7 @@
 // };
 
 // export default AdminAddBlog;
+
+export default function Page() {
+    return <div>Add Blogs</div>;
+  }
