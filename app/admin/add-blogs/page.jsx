@@ -9,12 +9,13 @@ export const dynamic = "force-dynamic";
 import { useState, useRef, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
+import nextDynamic from "next/dynamic";
 import axios from "axios";
 import AdminLayout from "../components/layout";
 
 // Dynamically import CKEditor with SSR disabled
-const CKEditor = dynamic(() => import('@ckeditor/ckeditor5-react').then(mod => mod.CKEditor), {
+const CKEditor = nextDynamic(() => import('@ckeditor/ckeditor5-react').then(mod => mod.CKEditor), {
   ssr: false,
   loading: () => <div className="h-64 bg-gray-100 rounded-lg flex items-center justify-center">
     <div className="text-center">
