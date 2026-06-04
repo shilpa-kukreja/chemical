@@ -366,7 +366,7 @@ export default function Footer() {
                 <Mail size={16} /> marketing@chemicalsallied.in
               </li>
               <li className="flex gap-3">
-                <Phone size={16} />+91 9918100952 +91 7706862269
+                <Phone size={16} />+91 9918100954 +91 7706862269
               </li>
               <li className="flex gap-3">
                 <MapPin size={16} />  Gorakhpur Road, Industrial Area, Deoria - 274001, Uttar Pradesh, India
@@ -391,7 +391,7 @@ export default function Footer() {
 
         {/* CALL BUTTON */}
         <a
-          href="tel:+91 9918100952"
+          href="tel:+91 9918100954"
           aria-label="Call Us"
           className="group relative flex h-14 w-14 items-center justify-center rounded-full 
      bg-[#1b3163] shadow-[0_12px_30px_rgba(27,49,99,0.35)]
