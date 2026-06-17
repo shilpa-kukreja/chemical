@@ -18,7 +18,7 @@ const BlogDetails = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemical-backend-6oix.onrender.com";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemicalsallied.in";
 
   // ✅ fetch blogs
   useEffect(() => {
