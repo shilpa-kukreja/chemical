@@ -22,7 +22,7 @@ export default function ListBlog() {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:5000/api/blog/blogs");
+        const response = await axios.get("https://chemicalsallied.in/api/blog/blogs");
         
         if (response.data && Array.isArray(response.data)) {
           setBlogs(response.data);
@@ -85,7 +85,7 @@ export default function ListBlog() {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/blog/${id}`
+        `https://chemicalsallied.in/api/blog/${id}`
       );
       // alert(response.data.message || "Blog deleted successfully");
       setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== id));
@@ -103,7 +103,7 @@ export default function ListBlog() {
         Name: blog.blogName,
         Description: blog.blogDescription || "No description",
         Date: new Date(blog.createdAt || Date.now()).toLocaleDateString(),
-        Image: `http://localhost:5000${blog.blogImg}`
+        Image: `https://chemicalsallied.in${blog.blogImg}`
       }));
       
       const worksheet = XLSX.utils.json_to_sheet(dataToExport);
@@ -263,7 +263,7 @@ export default function ListBlog() {
                               <td className="px-6 py-4">
                                 <div className="flex-shrink-0 h-16 w-16 rounded-md overflow-hidden border border-gray-200">
                                   <img
-                                    src={`http://localhost:5000${blog.blogImg}`}
+                                    src={`https://chemicalsallied.in${blog.blogImg}`}
                                     alt={blog.blogName}
                                     className="h-16 w-16 object-cover"
                                     // onError={(e) => {
