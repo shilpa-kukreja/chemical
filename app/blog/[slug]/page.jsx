@@ -18,7 +18,7 @@ const BlogDetails = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://chemicalsallied.in";
+  const API_BASE_URL =  "https://chemicalsallied.in";
 
   // ✅ fetch blogs
   useEffect(() => {
@@ -103,7 +103,7 @@ const BlogDetails = () => {
           </Link>
 
           <img
-            src={`http://localhost:5000${blogData.blogImg}`}
+            src={`https://chemicalsallied.in${blogData.blogImg}`}
             alt={blogData.blogName}
             className="w-full aspect-ratio rounded-lg object-cover"
           />
@@ -176,7 +176,7 @@ const BlogDetails = () => {
                 className="flex gap-4 group"
               >
                 <img
-                  src={`http://localhost:5000${item.blogImg}`}
+                  src={`https://chemicalsallied.in${item.blogImg}`}
                   alt={item.blogName}
                   className="rounded-lg object-cover w-20 h-20"
                 />
