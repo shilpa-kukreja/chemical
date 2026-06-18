@@ -1,5 +1,5 @@
 // lib/api.js
-const API_BASE = 'http://localhost:5000/api/blog';
+const API_BASE = 'https://chemicalsallied.in/api/blog';
 
 export async function fetchBlog(id) {
   const res = await fetch(`${API_BASE}/blog/${id}`);
