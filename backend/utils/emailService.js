@@ -3,9 +3,9 @@ import nodemailer from 'nodemailer';
 // Create reusable transporter
 const createTransporter = () => {
   return nodemailer.createTransport({
-    host: process.env.EMAIL_HOST, // e.g., smtp.gmail.com
-    port: process.env.EMAIL_PORT || 587,
-    secure: process.env.EMAIL_SECURE === 'true', // true for 465, false for other ports
+    host: process.env.EMAIL_HOST,
+    port: Number(process.env.EMAIL_PORT) || 587,
+    secure: process.env.EMAIL_PORT === '465', // auto-handle SSL
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASSWORD,
