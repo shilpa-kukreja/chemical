@@ -28,7 +28,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/analytics/dashboard-stats');
+        const res = await axios.get('https://chemicalsallied.in/api/analytics/dashboard-stats');
         setStats(res.data.data);
       } catch (err) {
         setError('Failed to load dashboard data');
