@@ -15,6 +15,7 @@ import mainbannerRouter from "./routes/mainbannerRoutes.js";
 import blogRouter from "./routes/blogRoutes.js";
 import enuiryRoutes from "./routes/enquiryRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
+import adminRouter from "./routes/adminRoutess.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -37,6 +38,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/mainbanner", mainbannerRouter); 
 app.use('/api/enquiries', enuiryRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/analytics' , adminRouter)
 
 app.get("/", (req, res) => {
     res.send("API is running...");

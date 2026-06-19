@@ -20,7 +20,7 @@ export default function AdminSidebar() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: "/admin", label: "Dashboard", icon: FiHome, group: "main" },
+    { href: "/admin/dashboard", label: "Dashboard", icon: FiHome, group: "main" },
     { 
       href: "/admin/add-categories", 
       label: "Categories", 
