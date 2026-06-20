@@ -92,8 +92,8 @@ export default function Page() {
   return (
     <div>
       <section>
-        <h1 className="sr-only">
-          Crop Protection Chemical Manufacturer in Uttar Pradesh | Chemicals & Allied Products
+        <h1 className="text-3xl md:text-5xl font-bold text-center py-8 text-green-800">
+          Crop Protection Chemical Manufacturer in Uttar Pradesh
         </h1>
         <HomeSlider />
       </section>
