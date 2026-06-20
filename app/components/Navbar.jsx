@@ -826,7 +826,11 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
-
+               <li>
+                <Link href="/blogs" className={linkStyle("/blogs")}>
+                  Blogs
+                </Link>
+              </li>
 
               <li>
                 <Link href="/about-us" className={linkStyle("/about-us")}>
@@ -882,6 +886,10 @@ export default function Navbar() {
 
             <Link href="/about-us" onClick={() => setIsMenuOpen(false)} className="block hover:text-red-600">
               Company Profile
+            </Link>
+
+            <Link href="/blogs" onClick={() => setIsMenuOpen(false)} className="block hover:text-red-600">
+              Blogs
             </Link>
 
             <Link href="/contact-us" onClick={() => setIsMenuOpen(false)} className="block hover:text-red-600">
