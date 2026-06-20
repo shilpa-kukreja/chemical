@@ -91,7 +91,12 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <HomeSlider />
+      <section>
+        <h1 className="sr-only">
+          Crop Protection Chemical Manufacturer in Uttar Pradesh | Chemicals & Allied Products
+        </h1>
+        <HomeSlider />
+      </section>
       <AboutUsSection />
       <ProductsShowcase />
       <TestimonialSection />
