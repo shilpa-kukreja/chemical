@@ -255,7 +255,7 @@ function BlogCard({ blog, index }) {
 
         {/* Excerpt */}
         <div
-          className="text-slate-600 text-sm mt-3 line-clamp-3 flex-grow"
+          className="text-slate-600 text-sm mt-3 line-clamp-2 flex-grow"
           dangerouslySetInnerHTML={{
             __html: blog.blogDetail?.substring(0, 180) || "No description",
           }}
