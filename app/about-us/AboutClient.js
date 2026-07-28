@@ -15,16 +15,18 @@ export default function AboutUs() {
     { id: 4, src: "/companygallery/TradeMemberships.webp", alt: "Trade Memberships", category: "Memberships" },
     { id: 5, src: "/companygallery/QualityMantra.webp", alt: "Quality Mantra", category: "Quality" },
     { id: 6, src: "/companygallery/QualityAssurance.webp", alt: "Quality Assurance", category: "Quality" },
-    { id: 7, src: "/companygallery/InfrastructuraSet-Up.jpeg", alt: "Infrastructure Set-Up", category: "Infrastructure" },
+    { id: 7, src: "/companygallery/Office.jpeg", alt: "Infrastructure Set-Up", category: "Office" },
     { id: 8, src: "/companygallery/OurInfrastructure.webp", alt: "Our Infrastructure", category: "Infrastructure" },
     { id: 9, src: "/companygallery/Memberships.webp", alt: "Memberships", category: "Memberships" },
     { id: 10, src: "/companygallery/Affiliations.webp", alt: "Affiliations", category: "Memberships" },
     { id: 11, src: "/companygallery/OurWarehouse.jpeg", alt: "Our Warehouse", category: "Infrastructure" },
     { id: 12, src: "/companygallery/CertificateofRegistration.webp", alt: "Certificate", category: "Certificates" },
-    { id: 13, src: "/companygallery/Research&DevelopmentFacilities.webp", alt: "R&D", category: "R&D" },
+    { id: 13, src: "/companygallery/Research&DevelopmentFacilities.jpeg", alt: "R&D", category: "R&D" },
     { id: 14, src: "/companygallery/Recognition.webp", alt: "Recognition", category: "Achievements" },
     { id: 15, src: "/companygallery/ISOCertification.webp", alt: "ISO Certification", category: "Certificates" },
-    { id: 15, src: "/companygallery/Certification.webp", alt: "Certification", category: "Certificates" },
+    { id: 16, src: "/companygallery/Certification.webp", alt: "Certification", category: "Certificates" },
+    { id: 17, src: "/companygallery/Manufacturing&PackagingMachineries.jpeg", alt: "Certification", category: "Manufacturing & Packaging Machineries" },
+
 
   ];
 
@@ -79,7 +81,7 @@ export default function AboutUs() {
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <div className="text-3xl font-bold text-[#1b3163]">2020</div>
+                <div className="text-3xl font-bold text-[#1b3163]">1974</div>
                 <div className="text-sm text-gray-600">Established</div>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
@@ -158,7 +160,7 @@ export default function AboutUs() {
             <FactCard
               icon="📊"
               title="Annual Turnover"
-              value="₹1.5 - 5 Cr"
+              value="Below 100Cr"
               subtext="GST Reg: 01-07-2017"
             />
           </div>
@@ -243,11 +245,11 @@ export default function AboutUs() {
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          {/* <div className="text-center mt-8">
             <button className="bg-[#1b3163] text-white px-8 py-3 rounded-lg hover:bg-[#2a4585] transition font-semibold">
               View Full Gallery
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -261,7 +263,7 @@ export default function AboutUs() {
               <div className="text-4xl mb-4">💳</div>
               <h3 className="text-xl font-bold text-[#1b3163] mb-4">Payment Modes</h3>
               <ul className="space-y-3">
-                {["Cash", "Cheque", "Credit Card"].map((mode, index) => (
+                {["Cash", "Cheque", "Credit Card","Bank Transfer","Wire Transfer", "Online","RTGS","DD"].map((mode, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                     <span className="text-gray-700">{mode}</span>
@@ -274,7 +276,7 @@ export default function AboutUs() {
               <div className="text-4xl mb-4">🚚</div>
               <h3 className="text-xl font-bold text-[#1b3163] mb-4">Shipment Mode</h3>
               <ul className="space-y-3">
-                {["By Road"].map((mode, index) => (
+                {["By Road","By Air","By Cargo","By Sea"].map((mode, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                     <span className="text-gray-700">{mode}</span>

@@ -1,5 +1,7 @@
 import exprees from "express";
 import dotenv from "dotenv";
+import dns from 'dns';
+dns.setServers(['1.1.1.1'],['8.8.8.8'])
 
 dotenv.config();
 import cors from "cors";
@@ -22,6 +24,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = exprees();
+
 app.use(exprees.json());
 app.use(cors());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
