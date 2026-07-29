@@ -1,31 +1,46 @@
 import BlogDetails from "./BlogDetails";
 
-
 const API_BASE_URL = "https://chemicalsallied.in";
 
 export async function generateMetadata({ params }) {
+  const slug = decodeURIComponent(params.slug).trim().toLowerCase();
+
   try {
     const res = await fetch(`${API_BASE_URL}/api/blog/blogs`, {
       cache: "no-store",
     });
 
-    const data = await res.json();
-    const blogs = Array.isArray(data) ? data : data.blogs;
+    if (!res.ok) {
+      throw new Error("Failed to fetch blogs");
+    }
 
-    const blog = blogs.find((item) => item.blogSlug === params.slug);
+    const data = await res.json();
+    const blogs = Array.isArray(data) ? data : data.blogs || [];
+
+    const blog = blogs.find(
+      (item) =>
+        item.blogSlug?.trim().toLowerCase() === slug
+    );
 
     if (!blog) {
       return {
-        title: "Blog Not Found | Chemicals & Allied Products",
-        description: "The requested blog could not be found.",
+        title: "Blog | Chemicals & Allied Products",
+        description:
+          "Read expert blogs on crop protection chemicals, agriculture, herbicides, fungicides and insecticides.",
+        robots: {
+          index: false,
+          follow: true,
+        },
       };
     }
 
-    const plainDescription = blog.blogDetail
-      ?.replace(/<[^>]*>/g, "")
-      ?.replace(/\s+/g, " ")
-      ?.trim()
-      ?.substring(0, 160);
+    const plainDescription =
+      blog.blogDetail
+        ?.replace(/<[^>]+>/g, "")
+        ?.replace(/\s+/g, " ")
+        ?.trim()
+        ?.slice(0, 160) ||
+      `Read ${blog.blogName} on Chemicals & Allied Products.`;
 
     const imageUrl = blog.blogImg
       ? `${API_BASE_URL}${blog.blogImg}`
@@ -34,9 +49,7 @@ export async function generateMetadata({ params }) {
     return {
       title: `${blog.blogName} | Chemicals & Allied Products`,
 
-      description:
-        plainDescription ||
-        "Read expert insights on crop protection chemicals and agriculture.",
+      description: plainDescription,
 
       keywords: [
         blog.blogName,
@@ -45,8 +58,7 @@ export async function generateMetadata({ params }) {
         "Herbicides",
         "Fungicides",
         "Insecticides",
-        "Agrochemical",
-        "Farming",
+        "Agrochemicals",
         "Chemical Manufacturer",
         "India",
       ],
@@ -61,15 +73,14 @@ export async function generateMetadata({ params }) {
       },
 
       openGraph: {
+        type: "article",
+        url: `${API_BASE_URL}/blog/${blog.blogSlug}`,
         title: blog.blogName,
         description: plainDescription,
-        url: `${API_BASE_URL}/blog/${blog.blogSlug}`,
         siteName: "Chemicals & Allied Products",
         locale: "en_IN",
-        type: "article",
-
         publishedTime: blog.createdAt,
-
+        modifiedTime: blog.updatedAt,
         images: [
           {
             url: imageUrl,
@@ -87,9 +98,11 @@ export async function generateMetadata({ params }) {
         images: [imageUrl],
       },
     };
-  } catch (error) {
+  } catch (err) {
+    console.error("Metadata Error:", err);
+
     return {
-      title: "Blogs | Chemicals & Allied Products",
+      title: "Chemicals & Allied Products Blog",
       description:
         "Read expert blogs on crop protection chemicals and agriculture.",
     };
@@ -97,5 +110,5 @@ export async function generateMetadata({ params }) {
 }
 
 export default function Page() {
-  return <BlogDetails/>;
+  return <BlogDetails />;
 }
