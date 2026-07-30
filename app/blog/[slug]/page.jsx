@@ -3,7 +3,9 @@ import BlogDetails from "./BlogDetails";
 const API_BASE_URL = "https://chemicalsallied.in";
 
 export async function generateMetadata({ params }) {
-  const slug = decodeURIComponent(params.slug).trim().toLowerCase();
+  // ✅ Await params first
+  const { slug: rawSlug } = await params;
+  const slug = decodeURIComponent(rawSlug).trim().toLowerCase();
 
   try {
     const res = await fetch(`${API_BASE_URL}/api/blog/blogs`, {
@@ -48,9 +50,7 @@ export async function generateMetadata({ params }) {
 
     return {
       title: `${blog.blogName} | Chemicals & Allied Products`,
-
       description: plainDescription,
-
       keywords: [
         blog.blogName,
         "Crop Protection Chemicals",
@@ -62,16 +62,13 @@ export async function generateMetadata({ params }) {
         "Chemical Manufacturer",
         "India",
       ],
-
       alternates: {
         canonical: `${API_BASE_URL}/blog/${blog.blogSlug}`,
       },
-
       robots: {
         index: true,
         follow: true,
       },
-
       openGraph: {
         type: "article",
         url: `${API_BASE_URL}/blog/${blog.blogSlug}`,
@@ -90,7 +87,6 @@ export async function generateMetadata({ params }) {
           },
         ],
       },
-
       twitter: {
         card: "summary_large_image",
         title: blog.blogName,
@@ -100,7 +96,6 @@ export async function generateMetadata({ params }) {
     };
   } catch (err) {
     console.error("Metadata Error:", err);
-
     return {
       title: "Chemicals & Allied Products Blog",
       description:
