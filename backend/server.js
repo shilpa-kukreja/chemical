@@ -1,6 +1,8 @@
 import exprees from "express";
 import dotenv from "dotenv";
 import dns from 'dns';
+import fs from 'fs';
+// import path from 'path';
 dns.setServers(['1.1.1.1'],['8.8.8.8'])
 
 dotenv.config();
@@ -18,7 +20,13 @@ import blogRouter from "./routes/blogRoutes.js";
 import enuiryRoutes from "./routes/enquiryRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import adminRouter from "./routes/adminRoutess.js";
+import careerRoutes from "./routes/careerRoutes.js";
+import carrerFormRoutes from './routes/careerFormRoutes.js';
 
+const uploadDir = path.join(process.cwd(), 'uploads/resume');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,7 +49,9 @@ app.use("/api/products", productRoutes);
 app.use("/api/mainbanner", mainbannerRouter); 
 app.use('/api/enquiries', enuiryRoutes);
 app.use('/api/contact', contactRoutes);
-app.use('/api/analytics' , adminRouter)
+app.use('/api/analytics' , adminRouter);
+app.use('/api/career',careerRoutes);
+app.use('/api/careerform',carrerFormRoutes);
 
 app.get("/", (req, res) => {
     res.send("API is running...");

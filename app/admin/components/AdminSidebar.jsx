@@ -39,6 +39,29 @@ export default function AdminSidebar() {
       icon: FiGrid, 
       group: "catalog" 
     },
+
+    { 
+      href: "/admin/add-edit-career", 
+      label: "Add Career", 
+      icon: FiGrid, 
+      group: "career" 
+    },
+
+    { 
+      href: "/admin/list-career", 
+      label: "List Career", 
+      icon: FiBookOpen, 
+      group: "career" 
+    },
+
+    { 
+      href: "/admin/career-applications", 
+      label: "Career Application List", 
+      icon: FiBookOpen, 
+      group: "career" 
+    },
+
+
     { 
       href: "/admin/add-banner", 
       label: "Banners", 
@@ -57,6 +80,8 @@ export default function AdminSidebar() {
       icon: FiBookOpen, 
       group: "blog" 
     },
+
+   
      { 
       href: "/admin/admin-enquries", 
       label: "Enquiries", 
@@ -80,6 +105,7 @@ export default function AdminSidebar() {
   const navGroups = {
     main: "Overview",
     catalog: "Catalog Management",
+    career: "Career",
     marketing: "Marketing",
     blog: "Blog",
     enquiries: "Enquiries",
