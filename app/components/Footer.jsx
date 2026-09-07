@@ -266,6 +266,7 @@ export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
+    { name: "Career", href: "/career" },
     { name: "Our Products", href: "/agricultural-herbicides-insecticide" },
     { name: "Contact Us", href: "/contact-us" },
     { name: "Blogs", href: "/blogs" },
