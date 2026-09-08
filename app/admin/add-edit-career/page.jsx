@@ -36,8 +36,8 @@ const AddEditCareerPageContent = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
-  // const NEXT_PUBLIC_BACKEND_URL = "https://chemicalsallied.in";
-    const NEXT_PUBLIC_BACKEND_URL = "http://localhost:5001";
+  const NEXT_PUBLIC_BACKEND_URL = "https://chemicalsallied.in";
+    // const NEXT_PUBLIC_BACKEND_URL = "http://localhost:5001";
 
 
   // Form state – added qualification
