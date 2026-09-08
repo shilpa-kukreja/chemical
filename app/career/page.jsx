@@ -10,10 +10,9 @@ export default function CareersListPage() {
   const [careers, setCareers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [selectedCareer, setSelectedCareer] = useState(null); // career for which modal is open
+  const [selectedCareer, setSelectedCareer] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  // Form state for the selected career
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -23,11 +22,10 @@ export default function CareersListPage() {
   });
   const [resumeFile, setResumeFile] = useState(null);
   const [formErrors, setFormErrors] = useState({});
-  const fileInputRef = useRef(null); // to reset file input after submission
-  // const NEXT_PUBLIC_BACKEND_URL="http://localhost:5001";
-  const NEXT_PUBLIC_BACKEND_URL="https://chemicalsallied.in";
+  const fileInputRef = useRef(null);
+  // const NEXT_PUBLIC_BACKEND_URL = "https://chemicalsallied.in";
+    const NEXT_PUBLIC_BACKEND_URL = "http://localhost:5001";
 
-  // Fetch all careers
   useEffect(() => {
     const fetchCareers = async () => {
       try {
@@ -45,7 +43,6 @@ export default function CareersListPage() {
     fetchCareers();
   }, []);
 
-  // Format date
   const formatDate = (date) => {
     if (!date) return "N/A";
     return new Date(date).toLocaleDateString("en-US", {
@@ -55,7 +52,6 @@ export default function CareersListPage() {
     });
   };
 
-  // Open modal for a career
   const handleApplyClick = (career) => {
     setSelectedCareer(career);
     setFormData({
@@ -72,7 +68,6 @@ export default function CareersListPage() {
     }
   };
 
-  // Close modal
   const closeModal = () => {
     setSelectedCareer(null);
     setFormData({
@@ -89,7 +84,6 @@ export default function CareersListPage() {
     }
   };
 
-  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -98,7 +92,6 @@ export default function CareersListPage() {
     }
   };
 
-  // Handle file change
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -117,7 +110,6 @@ export default function CareersListPage() {
     }
   };
 
-  // Validate
   const validate = () => {
     const errors = {};
     if (!formData.fullname.trim()) errors.fullname = "Full name is required";
@@ -136,7 +128,6 @@ export default function CareersListPage() {
     return Object.keys(errors).length === 0;
   };
 
-  // Submit application
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) {
@@ -153,8 +144,6 @@ export default function CareersListPage() {
       payload.append("position", formData.position);
       payload.append("coverLetter", formData.coverLetter);
       payload.append("resume", resumeFile);
-      // Optionally send careerId if your backend expects it
-      // payload.append("careerId", selectedCareer._id);
 
       await axios.post(
         `${NEXT_PUBLIC_BACKEND_URL}/api/careerform/carrer-forms`,
@@ -171,7 +160,6 @@ export default function CareersListPage() {
     }
   };
 
-  // Loading
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12">
@@ -183,7 +171,6 @@ export default function CareersListPage() {
     );
   }
 
-  // Error
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12">
@@ -248,13 +235,15 @@ export default function CareersListPage() {
                       )}
                     </div>
 
-                    {career.salary && (
-                      <p className="text-sm text-gray-600 mb-2">💰 {career.salary}</p>
+                    {/* New fields: Age, Working Hours, Qualification */}
+                    {career.age && (
+                      <p className="text-sm text-gray-600 mb-1">👤 Age: {career.age}</p>
                     )}
-                    {career.applicationDeadline && (
-                      <p className="text-xs text-gray-500 mb-3">
-                        Deadline: {formatDate(career.applicationDeadline)}
-                      </p>
+                    {career.workingHours && (
+                      <p className="text-sm text-gray-600 mb-1">🕒 Working Hours: {career.workingHours}</p>
+                    )}
+                    {career.qualification && (
+                      <p className="text-sm text-gray-600 mb-2">🎓 Qualification: {career.qualification}</p>
                     )}
 
                     <div className="flex flex-wrap gap-1 mb-3">
@@ -274,11 +263,10 @@ export default function CareersListPage() {
                     </div>
 
                     <p className="text-sm text-gray-700 line-clamp-3">
-                      {career.description.replace(/<[^>]*>/g, "").slice(0, 150)}...
+                      {career.description}
                     </p>
                   </div>
 
-                  {/* Apply button */}
                   <div className="px-6 pb-6">
                     <button
                       onClick={() => handleApplyClick(career)}
@@ -294,12 +282,11 @@ export default function CareersListPage() {
         </div>
       </div>
 
-      {/* Modal Overlay */}
+      {/* Modal Overlay - unchanged */}
       {selectedCareer && (
         <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             <div className="p-6 md:p-8">
-              {/* Modal Header */}
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h2 className="text-2xl font-bold text-slate-800">
@@ -319,7 +306,6 @@ export default function CareersListPage() {
                 </button>
               </div>
 
-              {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="fullname" className="block text-sm font-medium text-gray-700">

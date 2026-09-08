@@ -18,8 +18,8 @@ export default function CareerListPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
 
-    // const NEXT_PUBLIC_BACKEND_URL="http://localhost:5001";
-    const NEXT_PUBLIC_BACKEND_URL="https://chemicalsallied.in";
+  // const NEXT_PUBLIC_BACKEND_URL = "https://chemicalsallied.in";
+    const NEXT_PUBLIC_BACKEND_URL = "http://localhost:5001";
 
   // Fetch all careers
   const fetchCareers = async () => {
@@ -28,7 +28,7 @@ export default function CareerListPage() {
       const { data } = await axios.get(
         `${NEXT_PUBLIC_BACKEND_URL}/api/career/careers`
       );
-      console.log("career data",data);
+      console.log("career data", data);
       setCareers(data);
       setError("");
     } catch (err) {
@@ -78,7 +78,7 @@ export default function CareerListPage() {
     }
   };
 
-  // Export to Excel
+  // Export to Excel – added Qualification
   const handleExport = () => {
     if (careers.length === 0) {
       toast.warning("No careers to export");
@@ -91,13 +91,10 @@ export default function CareerListPage() {
         Location: c.location,
         Type: c.type,
         Experience: c.experience || "N/A",
-        Salary: c.salary || "N/A",
-        Deadline: c.applicationDeadline
-          ? new Date(c.applicationDeadline).toLocaleDateString()
-          : "N/A",
-        Status: c.applicationDeadline && new Date(c.applicationDeadline) < new Date()
-          ? "Expired"
-          : "Active",
+        Age: c.age || "N/A",
+        "Working Hours": c.workingHours || "N/A",
+        Qualification: c.qualification || "N/A",
+        Status: c.isActive ? "Active" : "Inactive",
         Tags: c.tags?.join(", ") || "",
       }));
       const ws = XLSX.utils.json_to_sheet(exportData);
@@ -122,15 +119,12 @@ export default function CareerListPage() {
     });
   };
 
-  // Status badge
+  // Status badge – now based on isActive
   const getStatusBadge = (career) => {
-    if (
-      career.applicationDeadline &&
-      new Date(career.applicationDeadline) < new Date()
-    ) {
+    if (career.isActive === false) {
       return (
         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-          Expired
+          Inactive
         </span>
       );
     }
@@ -230,7 +224,7 @@ export default function CareerListPage() {
           </div>
         </div>
 
-        {/* Stats cards (optional but nice) */}
+        {/* Stats cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
             <p className="text-sm text-gray-500">Total Jobs</p>
@@ -239,25 +233,13 @@ export default function CareerListPage() {
           <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
             <p className="text-sm text-gray-500">Active</p>
             <p className="text-2xl font-bold text-slate-800">
-              {
-                careers.filter(
-                  (c) =>
-                    !c.applicationDeadline ||
-                    new Date(c.applicationDeadline) >= new Date()
-                ).length
-              }
+              {careers.filter((c) => c.isActive !== false).length}
             </p>
           </div>
           <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
-            <p className="text-sm text-gray-500">Expired</p>
+            <p className="text-sm text-gray-500">Inactive</p>
             <p className="text-2xl font-bold text-slate-800">
-              {
-                careers.filter(
-                  (c) =>
-                    c.applicationDeadline &&
-                    new Date(c.applicationDeadline) < new Date()
-                ).length
-              }
+              {careers.filter((c) => c.isActive === false).length}
             </p>
           </div>
           <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
@@ -390,11 +372,6 @@ export default function CareerListPage() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div>{getStatusBadge(career)}</div>
-                        {career.applicationDeadline && (
-                          <div className="text-xs text-gray-500 mt-1">
-                            Until {formatDate(career.applicationDeadline)}
-                          </div>
-                        )}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm">
                         <div className="flex space-x-2">
@@ -432,7 +409,7 @@ export default function CareerListPage() {
         </div>
       </div>
 
-      {/* View Details Modal */}
+      {/* View Details Modal – added Qualification */}
       {isModalOpen && selectedCareer && (
         <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-xl">
@@ -478,24 +455,28 @@ export default function CareerListPage() {
             <div className="p-6 overflow-y-auto max-h-[calc(90vh-140px)] space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <h4 className="text-sm font-medium text-gray-500">Salary</h4>
+                  <h4 className="text-sm font-medium text-gray-500">Age Range</h4>
                   <p className="text-gray-900">
-                    {selectedCareer.salary || "Not specified"}
+                    {selectedCareer.age || "Not specified"}
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium text-gray-500">Deadline</h4>
+                  <h4 className="text-sm font-medium text-gray-500">Working Hours</h4>
                   <p className="text-gray-900">
-                    {selectedCareer.applicationDeadline
-                      ? formatDate(selectedCareer.applicationDeadline)
-                      : "Not specified"}
+                    {selectedCareer.workingHours || "Not specified"}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-gray-500">Qualification</h4>
+                  <p className="text-gray-900">
+                    {selectedCareer.qualification || "Not specified"}
                   </p>
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-500">Status</h4>
                   <div>{getStatusBadge(selectedCareer)}</div>
                 </div>
-                <div>
+                <div className="col-span-2">
                   <h4 className="text-sm font-medium text-gray-500">Created</h4>
                   <p className="text-gray-900">
                     {formatDate(selectedCareer.createdAt)}

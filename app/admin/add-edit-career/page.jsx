@@ -36,20 +36,21 @@ const AddEditCareerPageContent = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+  // const NEXT_PUBLIC_BACKEND_URL = "https://chemicalsallied.in";
+    const NEXT_PUBLIC_BACKEND_URL = "http://localhost:5001";
 
-    // const NEXT_PUBLIC_BACKEND_URL="http://localhost:5001";
-    const NEXT_PUBLIC_BACKEND_URL="https://chemicalsallied.in";
 
-  // Form state
+  // Form state – added qualification
   const [formData, setFormData] = useState({
     title: "",
     location: "",
     type: "",
     description: "",
     tags: "",
-    salary: "",
     experience: "",
-    applicationDeadline: "",
+    age: "",
+    workingHours: "",
+    qualification: "", // new
   });
 
   const [fieldErrors, setFieldErrors] = useState({});
@@ -69,9 +70,10 @@ const AddEditCareerPageContent = () => {
           type: data.type || "",
           description: data.description || "",
           tags: data.tags ? data.tags.join(", ") : "",
-          salary: data.salary || "",
           experience: data.experience || "",
-          applicationDeadline: data.applicationDeadline || "",
+          age: data.age || "",
+          workingHours: data.workingHours || "",
+          qualification: data.qualification || "",
         });
       } catch (err) {
         setError(err.response?.data?.message || "Failed to load career");
@@ -92,7 +94,7 @@ const AddEditCareerPageContent = () => {
     }
   };
 
-  // Validate form
+  // Validate – added qualification required
   const validate = () => {
     const errors = {};
     if (!formData.title.trim()) errors.title = "Job title is required";
@@ -102,17 +104,14 @@ const AddEditCareerPageContent = () => {
       errors.description = "Job description is required";
     if (formData.description.replace(/<[^>]*>/g, "").length < 20)
       errors.description = "Description must be at least 20 characters";
-    if (
-      formData.applicationDeadline &&
-      new Date(formData.applicationDeadline) < new Date()
-    )
-      errors.applicationDeadline = "Deadline must be in the future";
+    if (!formData.qualification.trim())
+      errors.qualification = "Qualification is required";
 
     setFieldErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
-  // Handle form submit
+  // Handle form submit – added qualification
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) {
@@ -288,51 +287,66 @@ const AddEditCareerPageContent = () => {
             </div>
           </div>
 
-          {/* Salary & Deadline (side by side) */}
+          {/* Qualification - new field */}
+          <div>
+            <label
+              htmlFor="qualification"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Qualification <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="qualification"
+              name="qualification"
+              value={formData.qualification}
+              onChange={handleChange}
+              placeholder="e.g., Bachelor's in Computer Science"
+              className={`mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                fieldErrors.qualification ? "border-red-500" : "border-gray-300"
+              }`}
+            />
+            {fieldErrors.qualification && (
+              <p className="mt-1 text-sm text-red-500">{fieldErrors.qualification}</p>
+            )}
+          </div>
+
+          {/* Age & Working Hours (side by side) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label
-                htmlFor="salary"
+                htmlFor="age"
                 className="block text-sm font-medium text-gray-700"
               >
-                Salary Range
+                Age Range
               </label>
               <input
                 type="text"
-                id="salary"
-                name="salary"
-                value={formData.salary}
+                id="age"
+                name="age"
+                value={formData.age}
                 onChange={handleChange}
-                placeholder="e.g., $80,000 - $120,000"
+                placeholder="e.g., 18-30"
                 className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
             <div>
               <label
-                htmlFor="applicationDeadline"
+                htmlFor="workingHours"
                 className="block text-sm font-medium text-gray-700"
               >
-                Application Deadline
+                Working Hours
               </label>
               <input
-                type="date"
-                id="applicationDeadline"
-                name="applicationDeadline"
-                value={formData.applicationDeadline}
+                type="text"
+                id="workingHours"
+                name="workingHours"
+                value={formData.workingHours}
                 onChange={handleChange}
-                min={new Date().toISOString().split("T")[0]}
-                className={`mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                  fieldErrors.applicationDeadline
-                    ? "border-red-500"
-                    : "border-gray-300"
-                }`}
+                placeholder="e.g., 9 AM - 5 PM"
+                className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              {fieldErrors.applicationDeadline && (
-                <p className="mt-1 text-sm text-red-500">
-                  {fieldErrors.applicationDeadline}
-                </p>
-              )}
             </div>
           </div>
 

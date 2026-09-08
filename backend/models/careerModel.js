@@ -7,13 +7,14 @@ const careerSchema = new mongoose.Schema(
     type: { type: String, required: true },
     description: { type: String, required: true },
     tags: { type: [String], required: true },
-    salary: { type: String, default: "" },
+    qualification: { type: String, required: true},
     experience: { type: String, default: "" },
-    applicationDeadline: { type: Date, default: null },
+    age: { type: String, default: "" },            // e.g., "18-30"
+    workingHours: { type: String, default: "" },   // e.g., "9-5", "Flexible"
     isActive: { type: Boolean, default: true }
   },
-  { timestamps: true } 
+  { timestamps: true }
 );
 
-const carrerModel = mongoose.models.Career || mongoose.model("Career", careerSchema);
-export default carrerModel;
+const careerModel = mongoose.models.Career || mongoose.model("Career", careerSchema);
+export default careerModel;
