@@ -24,7 +24,7 @@ export default function CareersListPage() {
   const [formErrors, setFormErrors] = useState({});
   const fileInputRef = useRef(null);
   const NEXT_PUBLIC_BACKEND_URL = "https://chemicalsallied.in";
-    // const NEXT_PUBLIC_BACKEND_URL = "http://localhost:5001";
+    
 
   useEffect(() => {
     const fetchCareers = async () => {
