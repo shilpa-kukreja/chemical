@@ -262,7 +262,7 @@ export default function CareersListPage() {
                       )}
                     </div>
 
-                    <p className="text-sm text-gray-700 line-clamp-3">
+                    <p className="text-sm text-gray-700">
                       {career.description}
                     </p>
                   </div>
