@@ -306,9 +306,9 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4">
-            <Facebook />
-            <Twitter />
-            <Instagram />
+           <a href="https://www.facebook.com/profile.php?id=100064061651532"><Facebook /></a> 
+            {/* <Twitter /> */}
+            <a href="https://www.instagram.com/chemicalsandalliedproducts?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="><Instagram /></a>
           </div>
         </div>
 
