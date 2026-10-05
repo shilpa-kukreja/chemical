@@ -838,6 +838,12 @@ export default function Navbar() {
                 </Link>
               </li>
 
+               <li>
+                <Link href="/career" className={linkStyle("/career")}>
+                  Career
+                </Link>
+              </li>
+
               <li>
                 <Link href="/contact-us" className={linkStyle("/contact-us")}>
                   Contact Us
@@ -887,6 +893,12 @@ export default function Navbar() {
             <Link href="/about-us" onClick={() => setIsMenuOpen(false)} className="block hover:text-red-600">
               Company Profile
             </Link>
+
+
+           <Link href="/career" onClick={() => setIsMenuOpen(false)} className="block hover:text-red-600">
+              Career
+            </Link>
+
 
             <Link href="/blogs" onClick={() => setIsMenuOpen(false)} className="block hover:text-red-600">
               Blogs

@@ -266,6 +266,7 @@ export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
+    { name: "Career", href: "/career" },
     { name: "Our Products", href: "/agricultural-herbicides-insecticide" },
     { name: "Contact Us", href: "/contact-us" },
     { name: "Blogs", href: "/blogs" },
@@ -305,9 +306,9 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4">
-            <Facebook />
-            <Twitter />
-            <Instagram />
+           <a href="https://www.facebook.com/profile.php?id=100064061651532"><Facebook /></a> 
+            {/* <Twitter /> */}
+            <a href="https://www.instagram.com/chemicalsandalliedproducts?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="><Instagram /></a>
           </div>
         </div>
 
